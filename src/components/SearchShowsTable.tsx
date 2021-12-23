@@ -31,7 +31,11 @@ const columns = [
     title: "Name",
     dataIndex: "name",
     render: (_: unknown, data: any) => {
-      return <a href={data?.show.url}>{data?.show.name ?? "N/A"}</a>;
+      return (
+        <a href={data?.show.url ? `${data.show.url}/episodes` : "/"}>
+          {data?.show.name ?? "N/A"}
+        </a>
+      );
     },
   },
   {
